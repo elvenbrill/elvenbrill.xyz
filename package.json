@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "name": "elvenbrill.xyz",
+  "version": "1.0.0",
+  "description": "The personal website of @elvenbrill",
+  "author": "@elvenbrill",
+  "homepage": "https://github.com/elvenbrill/elvenbrill.xyz#readme",
+  "repository": "github:elvenbrill/elvenbrill.xyz",
+  "bugs": "https://github.com/elvenbrill/elvenbrill.xyz/issues",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --incremental --serve",
+    "update": "yarn upgrade-interactive --latest && yarn upgrade",
+    "format": "prettier --write **/*.{js,json,s?css} !_site"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "github:11ty/eleventy",
+    "@11ty/eleventy-fetch": "^3.0.0",
+    "@11ty/eleventy-img": "^2.0.1",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  },
+  "engines": {
+    "node": ">= 18"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  }
+}
