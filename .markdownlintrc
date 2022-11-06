@@ -1,0 +1,9 @@
+{
+  "default": true,
+  "whitespace": false,
+  "line-length": false,
+  "first-line-heading": false,
+  "no-trailing-punctuation": {
+    "punctuation": ".,;:"
+  }
+}

@@ -1,0 +1,19 @@
+---
+layout: page
+title: "Публикации"
+summary: "Кратки публикации, статии и есета; писани главно за мен, а понякога и за други, също."
+introduction: "Кратки публикации, статии и есета; писани главно за мен, а понякога и за други, също."
+date: "Last Modified"
+permalink: /articles/
+override:tags: []
+---
+<ul>
+  {%- for article in collections.articles | reversed -%}
+  <li>
+    <a class="u-url" rel="bookmark" href="{{ article.url }}">
+      {{ article.data.date | date: "%d.%m.%Y" }}
+    </a>
+    {{ article.data.title }}
+  </li>
+  {%- endfor -%}
+</ul>

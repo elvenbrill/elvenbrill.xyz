@@ -1,0 +1,14 @@
+---
+layout: base
+---
+<main id="main" {% if lang %}lang="{{ lang }}" {%- endif %}>
+  <article>
+    <h1>{{ title }}</h1>
+    {% if introduction -%}
+    <section>
+      <p>{{ introduction }}</p>
+    </section>
+    {% endif -%}
+    {{ layoutContent }}
+  </article>
+</main>

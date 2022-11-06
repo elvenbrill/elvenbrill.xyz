@@ -7,9 +7,10 @@
 
   [context.production.environment]
     ELEVENTY_ENV = "production"
+    NETLIFY_USE_YARN = "true"
     NODE_ENV = "production"
     NODE_VERSION = "18"
-    NETLIFY_USE_YARN = "true"
+    TZ = "Europe/Sofia"
 
 [[headers]]
   for = "/*"
@@ -19,7 +20,7 @@
     Referrer-Policy= "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
+    X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1; mode=block"
 
 [[headers]]
@@ -47,3 +48,9 @@
   to = "https://elvenbrill.xyz/:splat"
   status = 301
   force = true
+
+# 404s
+[[redirects]]
+  from = "*"
+  to = "/404"
+  status = 404
