@@ -22,7 +22,7 @@
     "browserslist": "^4.21.4",
     "dotenv": "^16.0.3",
     "html-minifier": "^4.0.0",
-    "lightningcss": "^1.16.0",
+    "lightningcss": "^1.16.1",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-accessible-lists": "^1.1.0",
