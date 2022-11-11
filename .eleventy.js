@@ -21,11 +21,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addExtension("css", require("./lib/extensions/css.js"));
 
   // Filters
+  eleventyConfig.addFilter("absolute_url", require("@11ty/eleventy-plugin-rss").absoluteUrl);
   eleventyConfig.addFilter("datetime", require("./lib/filters/datetime.js"));
   eleventyConfig.addFilter("hostname", require("./lib/filters/hostname.js"));
   eleventyConfig.addFilter("limit", require("./lib/filters/limit.js"));
   eleventyConfig.addFilter("markdown", require("./lib/filters/markdown.js"));
   eleventyConfig.addFilter("noOrphans", require("./lib/filters/no-orphans.js"));
+  eleventyConfig.addLiquidFilter("dateToRfc3339", require("@11ty/eleventy-plugin-rss").dateToRfc3339);
 
   // Plugins
   eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
