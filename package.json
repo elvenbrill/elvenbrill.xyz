@@ -3,16 +3,11 @@
   "name": "elvenbrill.xyz",
   "version": "1.0.0",
   "description": "The personal website of @elvenbrill",
-  "author": "@elvenbrill",
-  "homepage": "https://github.com/elvenbrill/elvenbrill.xyz#readme",
-  "repository": "github:elvenbrill/elvenbrill.xyz",
-  "bugs": "https://github.com/elvenbrill/elvenbrill.xyz/issues",
   "scripts": {
     "build": "npx @11ty/eleventy",
     "start": "npx @11ty/eleventy --incremental --serve",
     "update": "yarn upgrade-interactive --latest && yarn upgrade",
-    "format": "prettier --write **/*.{js,json,css} !_site",
-    "lint:markdown": "markdownlint 'src/**/*.md'"
+    "format": "prettier --write **/*.{js,json,css} !_site"
   },
   "dependencies": {
     "@11ty/eleventy": "github:11ty/eleventy",
@@ -25,13 +20,13 @@
     "lightningcss": "^1.16.1",
     "markdown-it": "^13.0.1",
     "markdown-it-abbr": "^1.0.4",
-    "markdown-it-accessible-lists": "^1.1.0",
     "markdown-it-attribution": "^0.1.4",
     "markdown-it-deflist": "^2.1.0",
-    "markdown-it-footnote": "^3.0.3"
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
   },
   "devDependencies": {
-    "markdownlint-cli": "^0.32.2",
     "prettier": "^2.7.1"
   },
   "prettier": {
@@ -40,5 +35,9 @@
     "tabWidth": 2,
     "semi": true,
     "singleQuote": false
-  }
+  },
+  "author": "@elvenbrill",
+  "homepage": "https://github.com/elvenbrill/elvenbrill.xyz#readme",
+  "repository": "github:elvenbrill/elvenbrill.xyz",
+  "bugs": "https://github.com/elvenbrill/elvenbrill.xyz/issues"
 }

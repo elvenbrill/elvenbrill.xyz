@@ -54,3 +54,15 @@
   from = "*"
   to = "/404"
   status = 404
+
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/assets/icons/favicon.ico"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/articles/*"
+  to = "/notes/:splat"
+  status = 301
+  force = true

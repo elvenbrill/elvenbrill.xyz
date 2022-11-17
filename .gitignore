@@ -10,7 +10,7 @@ node_modules
 .cache
 _cache
 
-# 11ty build / generated output
+# 11ty build/generated output
 _site
 dist
 

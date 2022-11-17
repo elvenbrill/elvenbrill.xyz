@@ -1,0 +1,17 @@
+---
+layout: "layouts/page.njk"
+title: "Публикации"
+summary: "Кратки публикации, статии и есета; писани главно за мен, а понякога и за други, също."
+date: "Last Modified"
+permalink: /notes/
+override:tags: ["page"]
+---
+<ul>
+  {%- for item in collections.notes -%}
+  <li>
+    <a class="u-url" rel="bookmark" href="{{ item.url }}">
+      {{ item.data.title }}
+    </a>
+  </li>
+  {%- endfor -%}
+</ul>

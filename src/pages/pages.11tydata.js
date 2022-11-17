@@ -1,5 +1,5 @@
 module.exports = {
-  layout: "page",
+  layout: "layouts/page.njk",
   tags: ["page"],
   date: "Last Modified",
 };

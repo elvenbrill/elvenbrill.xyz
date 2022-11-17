@@ -3,9 +3,9 @@ eleventyExcludeFromCollections: true
 permalink: /site.webmanifest
 ---
 {
-  "lang": "bg",
+  "lang": "{{ site.locale }}",
   "name": "{{ site.title }}",
-  "short_name": "{{ site.shortTitle }}",
+  "short_name": "{{ author.name | capitalize }}",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",
@@ -18,8 +18,6 @@ permalink: /site.webmanifest
       "type": "image/png"
     }
   ],
-  "theme_color": "{{ site.themeColor }}",
-  "background_color": "{{ site.backgroundColor }}",
   "display": "minimal-ui",
   "start_url": "./"
 }
