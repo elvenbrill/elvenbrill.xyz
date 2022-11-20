@@ -1,51 +1,33 @@
 {%- layout 'base' -%}
-
-{% block 'main' -%}
-<main id="main">
+{%- block 'main' -%}
+<main class="main" role="main" id="main" tabindex="-1">
 
   <h1>{{ title }}</h1>
 
-  {{ layoutContent }}
+  <section>
+    {{ layoutContent }}
+  </section>
 
-  <h2>Latest articles</h2>
-  <ol>
-  {%- for item in collections.articles | limit: 3 %}
-    <li>
-      <a class="u-url" rel="bookmark" href="{{ item.url }}">
-        {{ item.data.title }}
-      </a>
-      <time datetime="{{ item.date | date: '%Y-%m-%dT%H:%M:%S.%L%:z' }}">
-        {{ item.date | date: '%d.%m.%Y' }}
-      </time>
-    </li>
-  {%- endfor %}
-  </ol>
-
-<p>More articles can be found in <a href="/articles/">the archive</a>.</p>
-
-{%- assign posts = collections.articles | reverse %}
-
-{%- assign thisYear = "now" | date: "%Y" %}
-{%- assign firstPost = collections.articles | first %}
-{%- assign firstYear = firstPost.date | date: "%Y" %}
-
-Every.... single post. Ever
-
-{%- for year in (firstYear..thisYear) reversed %}
-
-	<details>
-		<summary>{{year}}</summary>
-		<h3>Posts for {{ year }}</h3>
-    <ol>
-		{%- for post in posts %}
-			{%- assign postYear = post.date | date: "%Y" | plus: 0 %}
-      {%- if postYear == year %}
-      <li><a href="{{ post.url }}">{{ post.data.title }}</a> ({{ post.date | datetime: "dd MMMM yyyy" }})</li>
-			{%- endif %}
-		{%- endfor %}
-    </ol>
-	</details>
-{%- endfor %}
+  <section>
+    <h2>Наскоро записано</h2>
+      <ol role="list">
+        {%- for item in collections.articles | limit: 3 %}
+        <li>
+          <time datetime="{{ item.date | date: '%Y-%m-%dT%H:%M:%S.%L%:z' }}">
+            {{ item.date | date: '%d.%m.%Y' }}
+          </time>
+          <span aria-hidden="true"> · </span>
+          <a class="u-url" rel="bookmark" href="{{ item.url }}">
+            {{ item.data.title }}
+          </a>
+          {%- if item.data.summary %}
+          <p>{{ item.data.summary }}</p>
+          {%- endif %}
+        </li>
+        {%- endfor %}
+      </ol>
+      <p>Към всички <a href="/articles/">записки</a>.</p>
+  </section>
 
 </main>
-{% endblock %}
+{%- endblock -%}

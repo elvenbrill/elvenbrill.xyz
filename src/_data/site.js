@@ -11,6 +11,14 @@ module.exports = {
     icon: "/assets/icons/icon.svg",
     favicon: "/assets/icons/favicon.ico",
   },
+  endpoint: {
+    auth: "https://indieauth.com/auth",
+    token: "https://tokens.indieauth.com/token",
+    micropub: "",
+    microsub: "",
+    webmention: "https://webmention.io/elvendrim.xyz/webmention",
+    pingback: "https://webmention.io/elvenbrill.xyz/xmlrpc",
+  },
   author: {
     name: "elvenbrill",
     url: "https://elvenbrill.xyz",

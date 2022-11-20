@@ -8,8 +8,7 @@
     <title>{{ pageTitle | markdown: 'inline' | strip_html }}</title>
 
     <link rel="preload" href="/assets/fonts/webfont-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/webfont-italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/webfont-bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://webmention.io">
 
     <link rel="canonical" href="{{ canonicalUrl }}">
     <link rel="alternate" href="{{ '/feed.xml' | url }}" type="application/atom+xml" title="RSS (Atom) Feed">
@@ -17,6 +16,11 @@
 
     <link rel="me auth" href="{{ site.author.github }}">
     <link rel="me" href="{{ site.author.mastodon }}">
+
+    <link rel="authorization_endpoint" href="{{ site.endpoint.auth }}">
+    <link rel="token_endpoint" href="{{ site.endpoint.token }}">
+    <link rel="webmention" href="{{ site.endpoint.webmention }}">
+    <link rel="pingback" href="{{ site.endpoint.pingback }}">
 
     <link rel="apple-touch-icon" href="{{ site.icons.touchicon | url }}">
     <link rel="icon" href="{{ site.icons.icon | url }}" type="image/svg+xml">

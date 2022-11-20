@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
     layouts: "./src/_layouts",
   });
 
-  // Libraries
+  // Markdown Parsing
   eleventyConfig.setLibrary("md", require("./lib/markdown.js"));
 
   // Filters
@@ -44,14 +44,14 @@ module.exports = function (eleventyConfig) {
   // Transforms
   eleventyConfig.addTransform("htmlmin", require("./lib/transforms/htmlmin.js"));
 
-  // Passthrough
+  // Pass-through files
   eleventyConfig.addPassthroughCopy("./src/**/*.(jpg|webp|png|svg|ico)");
   eleventyConfig.addPassthroughCopy("./src/assets/fonts");
 
-  // Watch targets
+  // Asset Watch Targets
   eleventyConfig.addWatchTarget("./src/assets/css");
 
-  // Config
+  // Base Config
   return {
     dir: {
       input: "src",

@@ -12,24 +12,15 @@ override:tags: ["page"]
 {%- for post in collections.articles %}
   {%- assign currentdate = post.date | date: "%Y" %}
   {%- if currentdate != date %}
-    {%- unless forloop.first %}</ul>{%- endunless %}
-    <h1 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h1>
-    <ul>
+    {%- unless forloop.first %}</ol>{%- endunless %}
+    <h2 id="y{{post.date | date: "%Y"}}">{{ currentdate }}</h2>
+    <ol>
     {%- assign date = currentdate %}
   {%- endif %}
-    <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-  {%- if forloop.last %}</ul>{%- endif %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a> ({{ post.date | datetime: "dd MMMM yyyy" }})
+    </li>
+  {%- if forloop.last %}
+    </ol>
+  {%- endif %}
 {%- endfor %}
-
-<ul>
-  {%- for item in collections.articles %}
-  <li>
-    <time datetime="{{ item.date | date: '%Y-%m-%dT%H:%M:%S.%L%:z' }}">
-      {{ item.date | date: '%d.%m.%Y' }}
-    </time>
-    <a class="u-url" rel="bookmark" href="{{ item.url }}">
-      {{ item.data.title }}
-    </a>
-  </li>
-  {%- endfor %}
-</ul>

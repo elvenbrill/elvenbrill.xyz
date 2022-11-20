@@ -4,6 +4,7 @@ module.exports = {
   permalink: '/notes/{{ date | date: "%s" }}/',
   tags: ["post", "note"],
   eleventyComputed: {
-    title: 'Бележка: {{ date | date: "%d.%m.%Y, %H:%M" }}',
+    title: 'Бележка от {{ date | date: "%d.%m.%Y, %H:%M" }}',
+    summary: 'Кратка бележка публикувана на {{ date | date: "%d.%m.%Y" }}',
   },
 };
