@@ -1,0 +1,20 @@
+---
+eleventyExcludeFromCollections: "true"
+permalink: /site.webmanifest
+---
+{
+  "name": "{{ site.author.name | capitalize }}",
+  "short_name": "{{ site.author.name | capitalize }}",
+  "start_url": "/",
+  "display": "browser",
+  "description": "{{ site.description }}",
+  "dir": "{{ site.dir }}",
+  "lang": "{{ site.locale }}",
+  "orientation": "natural",
+  "scope": "/",
+  "icons": [
+    { "src": "/assets/icons/icon-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+    { "src": "/assets/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/icons/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

@@ -1,0 +1,27 @@
+@font-face {
+  font-display: swap;
+  font-family: "Söhne";
+  font-weight: normal;
+  src: url("/assets/fonts/soehne-buch.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Söhne";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/assets/fonts/soehne-buch-kursiv.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Söhne";
+  font-weight: 500;
+  src: url("/assets/fonts/soehne-kraftig.woff2") format("woff2");
+}
+
+/* „ “ „ “ */
+:root:lang(bg),
+:not(:lang(bg)) > :lang(bg) {
+  quotes: "\201e""\201c""\201e""\201c";
+}

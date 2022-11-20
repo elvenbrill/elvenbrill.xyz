@@ -1,0 +1,11 @@
+:root {
+  /* Typography */
+  --font-family-sans: "Söhne", sans-serif;
+  --font-family-monospace: "Söhne Mono", monospace;
+  --line-height-tight: 1.25;
+  --line-height-loose: 1.5;
+  --line-height-prose: 1.75;
+  --line-measure: 42.5rem;
+  --word-spacing: 0;
+  --text-spacing: 0 0.25em 0.125em 0.25em;
+}

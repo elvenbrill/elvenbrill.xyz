@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ site.locale }}" dir="{{ site.dir }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{{ pageDescription | default: site.description | markdown | strip_html | strip_newlines | strip }}">
+
+    <title>{{ pageTitle | markdown: 'inline' | strip_html }}</title>
+
+    <link rel="preload" href="/assets/fonts/webfont-regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/webfont-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/webfont-bold.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="canonical" href="{{ canonicalUrl }}">
+    <link rel="alternate" href="{{ '/feed.xml' | url }}" type="application/atom+xml" title="RSS (Atom) Feed">
+    <link rel="alternate" href="{{ '/feed.json' | url }}" type="application/feed+json" title="JSON Feed">
+
+    <link rel="me auth" href="{{ site.author.github }}">
+    <link rel="me" href="{{ site.author.mastodon }}">
+
+    <link rel="apple-touch-icon" href="{{ site.icons.touchicon | url }}">
+    <link rel="icon" href="{{ site.icons.icon | url }}" type="image/svg+xml">
+    <link rel="icon" href="{{ site.icons.favicon | url }}" sizes="any">
+    <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+
+    <meta name="supported-color-schemes" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+
+    <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
+    <meta name="generator" content="{{ eleventy.generator }}">
+  </head>
+  <body>
+    <header role="banner">
+    </header>
+
+    {% block 'main' -%}
+    {{ layoutContent }}
+    {% endblock -%}
+
+    <footer role="contentinfo">
+    </footer>
+    <!-- Current page: {{ page.url | url }} -->
+  </body>
+</html>

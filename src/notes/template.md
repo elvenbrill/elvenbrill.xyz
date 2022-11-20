@@ -1,6 +1,0 @@
----
-date: ""
-title: ""
-summary: ""
-location: ""
----
