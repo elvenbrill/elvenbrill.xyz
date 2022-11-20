@@ -42,7 +42,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection("pages", require("./lib/collections/pages.js"));
 
   // Transforms
-  // eleventyConfig.addTransform("htmlmin", require("./lib/transforms/htmlmin.js"));
+  eleventyConfig.addTransform("htmlmin", require("./lib/transforms/htmlmin.js"));
 
   // Passthrough
   eleventyConfig.addPassthroughCopy("./src/**/*.(jpg|webp|png|svg|ico)");

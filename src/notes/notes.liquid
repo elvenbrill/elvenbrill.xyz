@@ -5,4 +5,18 @@ summary: "Кратки бележки писани главно за мен, а 
 date: "Last Modified"
 permalink: /notes/
 override:tags: ["page"]
+eleventyComputed:
+  title: Бележки
 ---
+<ul>
+  {%- for item in collections.notes %}
+  <li>
+    <a class="u-url" rel="bookmark" href="{{ item.url }}">
+    <time datetime="{{ item.date | date: '%Y-%m-%dT%H:%M:%S.%L%:z' }}">
+      {{ item.date | date: '%d.%m.%Y' }}
+    </time>
+    </a>
+      {{ item._templateContent }}
+  </li>
+  {%- endfor %}
+</ul>
