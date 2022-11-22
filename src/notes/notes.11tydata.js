@@ -1,10 +1,8 @@
 module.exports = {
-  layout: "note",
+  layout: "layouts/note.njk",
+  title: "Бележка",
+  summary: "Кратка бележка, публикувана в този сайт или в Мастодон",
   type: "entry-untitled",
-  permalink: '/notes/{{ date | date: "%s" }}/',
+  permalink: "/notes/{{ page.fileSlug }}/",
   tags: ["post", "note"],
-  eleventyComputed: {
-    title: 'Бележка от {{ date | date: "%d.%m.%Y, %H:%M" }}',
-    summary: 'Кратка бележка публикувана на {{ date | date: "%d.%m.%Y" }}',
-  },
 };

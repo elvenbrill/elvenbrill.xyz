@@ -1,0 +1,37 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="{{ site.url }}">
+  <id>{{ site.url }}</id>
+  <title>{{ site.title }}</title>
+  <updated>{{ collections.articles | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <author>
+    <name>{{ author.name | capitalize }}</name>
+    <email>{{ author.email }}</email>
+    <uri>{{ author.url }}</uri>
+  </author>
+  <link rel="self" href="{{ permalink | absoluteUrl(site.url) }}" type="application/atom+xml"/>
+  <link rel="alternate" href="{{ site.url }}" type="text/html"/>
+  <icon>{{ author.avatar | absoluteUrl(site.url) }}</icon>
+  <rights>&#169; {{ 'now' | datetime('yyyy') }} {{ author.name | capitalize }}. Content Creative Commons licensed unless otherwise stated.</rights>
+  {%- for item in collections.articles | limit(10) %}
+  {%- set absolutePostUrl = item.url | absoluteUrl(site.url) %}
+  <entry>
+    <id>{{ absolutePostUrl }}</id>
+    <title>{{ item.data.title | markdown('inline') }}</title>
+    <updated>{{ item.date | dateToRfc3339 }}</updated>
+    {%- if item.data.url %}
+    <link rel="alternate" href="{{ item.data.url }}" type="text/html"/>
+    <link rel="related" href="{{ absolutePostUrl }}" type="text/html"/>
+    {%- elif item.data.in_reply_to %}
+    <link rel="alternate" href="{{ item.data.in_reply_to }}" type="text/html"/>
+    <link rel="related" href="{{ absolutePostUrl }}" type="text/html"/>
+    {%- else %}
+    <link rel="alternate" href="{{ absolutePostUrl }}" type="text/html"/>
+    {%- endif %}
+    <content xml:lang="{{ site.lang }}" type="html">{{ item.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

@@ -1,21 +1,18 @@
 <!doctype html>
-<html lang="{{ site.locale }}" dir="{{ site.dir }}">
+<html lang="{{ site.lang }}" dir="{{ site.dir }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="{{ pageDescription | default: site.description | markdown | strip_html | strip_newlines | strip }}">
+    <meta name="description" content="{{ pageDescription or site.description }}">
 
-    <title>{{ pageTitle | markdown: 'inline' | strip_html }}</title>
-
-    <link rel="preload" href="/assets/fonts/webfont-regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://webmention.io">
+    <title>{{ pageTitle }}</title>
 
     <link rel="canonical" href="{{ canonicalUrl }}">
     <link rel="alternate" href="{{ '/feed.xml' | url }}" type="application/atom+xml" title="RSS (Atom) Feed">
     <link rel="alternate" href="{{ '/feed.json' | url }}" type="application/feed+json" title="JSON Feed">
 
-    <link rel="me auth" href="{{ site.author.github }}">
-    <link rel="me" href="{{ site.author.mastodon }}">
+    <link rel="me auth" href="{{ author.social.github }}">
+    <link rel="me" href="{{ author.social.mastodon }}">
 
     <link rel="authorization_endpoint" href="{{ site.endpoint.auth }}">
     <link rel="token_endpoint" href="{{ site.endpoint.token }}">
@@ -28,23 +25,30 @@
     <link rel="manifest" href="{{ '/site.webmanifest' | url }}">
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
-
     <meta name="supported-color-schemes" content="light dark">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 
     <meta name="robots" content="{% if robots == true %}noindex{% else %}index{% endif %},follow">
     <meta name="generator" content="{{ eleventy.generator }}">
+    {%- block head %}
+    {%- endblock head %}
   </head>
   <body>
-    <header role="banner">
+    <a class="skip-link sr-only focusable" href="#content">Skip to content</a>
+    <header>
+      {%- block header %}
+      {%- endblock header %}
     </header>
 
-    {% block 'main' -%}
-    {{ layoutContent }}
-    {% endblock -%}
+    <main id="content" class="content" tabindex="-1">
+      {%- block content %}
+      {%- endblock content %}
+    </main>
 
-    <footer role="contentinfo">
+    <footer>
+      {%- block footer %}
+      {%- endblock footer %}
     </footer>
     <!-- Current page: {{ page.url | url }} -->
   </body>

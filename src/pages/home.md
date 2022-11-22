@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: 'layouts/home.njk'
 title: Здравей, аз съм Иван!
 permalink: /
 eleventyComputed:

@@ -1,0 +1,11 @@
+{
+  "name": "elvenbrill",
+  "email": "elvenbrill@pm.me",
+  "url": "https://elvenbrill.xyz",
+  "avatar": "/assets/icons/avatar.png",
+  "social": {
+    "github": "https://github.com/elvenbrill",
+    "mastodon": "https://mastodon.world/@elvenbrill",
+    "pixelfed": "https://pixelfed.social/elvenbrill"
+  }
+}

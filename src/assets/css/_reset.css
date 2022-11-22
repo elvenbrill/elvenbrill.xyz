@@ -65,10 +65,6 @@
   text-underline-offset: 0.2ex;
 }
 
-:where(ul, ol) {
-  list-style: none;
-}
-
 :where(img, svg, video, canvas, audio, iframe, embed, object) {
   display: block;
 }

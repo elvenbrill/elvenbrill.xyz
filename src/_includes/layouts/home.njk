@@ -1,0 +1,29 @@
+{%- extends 'layouts/base.njk' %}
+
+{%- block header %}
+{%- endblock %}
+
+{%- block content %}
+
+<h1>{{ title }}</h1>
+
+<section>
+  {{ content | safe }}
+</section>
+
+<section>
+
+{% renderTemplate "md" %}
+Наскоро публикувано:
+{% endrenderTemplate %}
+
+{%- for item in collections.articles | limit (1) %}
+<h2>{{ item.data.title }}</h2>
+{{ item.data.content | safe}}
+{%- endfor %}
+</section>
+
+{%- endblock %}
+
+{%- block footer %}
+{%- endblock %}

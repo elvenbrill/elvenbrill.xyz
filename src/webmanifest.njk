@@ -3,13 +3,13 @@ eleventyExcludeFromCollections: "true"
 permalink: /site.webmanifest
 ---
 {
-  "name": "{{ site.author.name | capitalize }}",
-  "short_name": "{{ site.author.name | capitalize }}",
+  "name": "{{ author.name | capitalize }}",
+  "short_name": "{{ author.name | capitalize }}",
   "start_url": "/",
   "display": "browser",
   "description": "{{ site.description }}",
   "dir": "{{ site.dir }}",
-  "lang": "{{ site.locale }}",
+  "lang": "{{ site.lang }}",
   "orientation": "natural",
   "scope": "/",
   "icons": [
