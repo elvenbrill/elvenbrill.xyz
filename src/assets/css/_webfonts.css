@@ -22,6 +22,6 @@
 
 /* „ “ „ “ */
 :root:lang(bg),
-:not(:lang(bg))> :lang(bg) {
-  quotes: "\201e" "\201c" "\201e" "\201c";
+:not(:lang(bg)) > :lang(bg) {
+  quotes: "\201e""\201c""\201e""\201c";
 }
