@@ -15,34 +15,17 @@ module.exports = function (eleventyConfig) {
 
   // Filters
   eleventyConfig.addFilter("datetime", require("./lib/filters/datetime.js"));
+  eleventyConfig.addFilter("groupByYear", require("./lib/filters/groupyear.js"));
   eleventyConfig.addFilter("hostname", require("./lib/filters/hostname.js"));
   eleventyConfig.addFilter("limit", require("./lib/filters/limit.js"));
   eleventyConfig.addFilter("markdown", require("./lib/filters/markdown.js"));
-
-  // Group posts by year
-  // https://github.com/11ty/eleventy/discussions/2630
-  eleventyConfig.addFilter("groupByYear", function (pages = []) {
-    const pagesMap = {};
-    for (const page of [...pages]) {
-      const pageYear = page.date.getFullYear();
-      const yearlyPosts = pagesMap[pageYear] || [pageYear, []];
-      yearlyPosts[1].push(page);
-      pagesMap[pageYear] = yearlyPosts;
-    }
-
-    return (
-      Object.values(pagesMap)
-        // Sort the year map in descending order.
-        .sort(([year1], [year2]) => year2 - year1)
-    );
-  });
 
   // Shortcodes
   eleventyConfig.addShortcode("image", require("./lib/shortcodes/image.js"));
 
   // Plugins
-  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
   eleventyConfig.addPlugin(EleventyRenderPlugin);
+  eleventyConfig.addPlugin(require("@11ty/eleventy-plugin-rss"));
 
   // Collections
   eleventyConfig.addCollection("articles", require("./lib/collections/articles.js"));

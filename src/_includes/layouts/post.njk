@@ -1,20 +1,24 @@
 {%- extends 'layouts/base.njk' %}
-
-{%- block header %}
+{%- block head %}
 {%- endblock %}
 
 {%- block content %}
+<article class="h-entry">
 
-<article>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 class="p-name">{{ title }}</h1>
   </header>
 
-  {{ content | safe }}
+  <section class="e-content">
+    {{ content | safe }}
+  </section>
+
+  <footer>
+    <time class="dt-published" datetime="{{ page.date | dateToRfc3339 }}">{{ page.date | datetime("dd LLLL yyyy") }}</time>
+  </footer>
 
 </article>
-
 {%- endblock %}
 
-{%- block footer %}
+{%- block foot %}
 {%- endblock %}

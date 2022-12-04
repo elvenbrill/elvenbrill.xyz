@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="{{ pageDescription or site.description }}">
 
-    <title>{{ pageTitle }}</title>
+    <title>{{ pageTitle | markdown("inline") }}</title>
+
+    <link rel="preload" href="{{ '/assets/fonts/librasans-regular.woff2' | url }}" as="font" type="font/woff2" crossorigin>
 
     <link rel="canonical" href="{{ canonicalUrl }}">
     <link rel="alternate" href="{{ '/feed.xml' | url }}" type="application/atom+xml" title="RSS (Atom) Feed">
@@ -36,9 +38,7 @@
   </head>
   <body>
     <a class="skip-link sr-only focusable" href="#content">Skip to content</a>
-    <header>
-      {%- block header %}
-      {%- endblock header %}
+    <header role="banner">
     </header>
 
     <main id="content" class="content" tabindex="-1">
@@ -46,10 +46,10 @@
       {%- endblock content %}
     </main>
 
-    <footer>
-      {%- block footer %}
-      {%- endblock footer %}
+    <footer role="contentinfo">
     </footer>
+    {%- block foot %}
+    {%- endblock foot %}
     <!-- Current page: {{ page.url | url }} -->
   </body>
 </html>
