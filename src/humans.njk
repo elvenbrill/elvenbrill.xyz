@@ -1,0 +1,54 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /humans.txt
+---
+The Humans Responsible & Colophon
+humanstxt.org
+
+{{ site.url | hostname }}
+{{ site.url }}
+
+## Team
+
+- {{ author.name | capitalize }}
+  - Designer
+  - {{ author.url }}
+  - {{ author.email }}
+  - {{ author.social.mastodon }}
+
+## Thanks
+
+- Zach Leatherman
+  - @zachleat@zachleat.com
+  - https://www.zachleat.com/
+
+## Site
+
+- Standards
+  - HTML5 (https://www.w3.org/TR/html5/)
+  - CSS (https://www.w3.org/Style/CSS/)
+  - JavaScript (https://www.javascript.com/)
+  - Markdown (https://daringfireball.net/projects/markdown/)
+  - SVG (https://www.w3.org/TR/SVG/)
+
+- Components
+  - Git (https://git-scm.com/)
+  - GitHub (https://github.com/)
+  - Node.js (https://nodejs.org/en/)
+  - 11ty (https://www.11ty.io/)
+
+- Libraries
+  - Merriweather (https://github.com/SorkinType/Merriweather/)
+
+- Browsers
+  - Chrome (https://www.google.com/chrome/)
+  - Edge (https://www.microsoft.com/en-us/edge/)
+  - Firefox (https://www.mozilla.org/en-US/firefox/new/)
+  - Safari (https://www.apple.com/safari/)
+  - Opera (https://www.opera.com/)
+
+- Software and Services
+  - MacOS (https://www.apple.com/macos/ventura/)
+  - VS Code (https://code.visualstudio.com/)
+
+Last update: {{ page.date | datetime('yyyy-LL-dd') }}

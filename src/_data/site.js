@@ -3,13 +3,13 @@ module.exports = {
   description:
     "Тези, които търсят истината, винаги трябва да бъдат предпочитани пред онези, които твърдят, че вече са я открили",
   lang: "bg",
-  locale: "bg",
+  locale: "bg_BG",
   dir: "ltr",
   domain: "elvendrim.xyz",
   url: process.env.URL || "http://localhost:8080",
   repo: "https://github.com/elvenbrill/elvenbrill.xyz",
   icons: {
-    icon: "/assets/icons/icon.svg",
+    icon: "/assets/icons/favicon.svg",
     favicon: "/assets/icons/favicon.ico",
     touchicon: "/assets/icons/apple-touch-icon.png",
   },

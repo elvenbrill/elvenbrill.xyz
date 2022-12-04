@@ -24,10 +24,10 @@ robots: "true"
     <a href="{{ post.url | url }}">
       <h3>{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</h3>
     </a>
-    <div>
+    <p>
       <span class="sr-only">published on </span>
       <time class="dt-published" datetime="{{ post.date | dateToRfc3339 }}">{{ post.date | datetime("dd LLLL yyyy") }}</time>
-    </div>
+    </p>
     {%- if post.data.summary %}
     <p>{{ post.data.summary }}</p>
     {%- endif %}
