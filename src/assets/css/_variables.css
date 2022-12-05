@@ -1,19 +1,80 @@
 :root {
-  --background: #fefefe;
-  --lighttext: #666666;
-  --text: #333333;
-  --decorative: #949494;
-  --marklight: #f6f6f6;
-  --markdark: #ededed;
-  background-color: #fefefe;
-  background-color: var(--background);
-  color: #333333;
-  color: var(--text);
-  font-family: Libra Sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 1.25rem;
-  font-size: calc(0.25vw + 0.25vh + 1rem);
-  font-weight: 400;
-  height: 100%;
-  line-height: 1.4;
+  --xxs: calc(0.125 * var(--md));
+  --xs: calc(0.25 * var(--md));
+  --sm: calc(0.5 * var(--md));
+  --md: 1.5rem;
+  --lg: calc(2 * var(--md));
+  --xl: calc(4 * var(--md));
+  --xxl: calc(8 * var(--md));
+
+  --gap: var(--md);
+  --gutter: var(--lg);
+  --frame-block: max(env(safe-area-inset-top), var(--lg));
+  --frame-inline: max(env(safe-area-inset-right), calc(0.75 * var(--md)));
+
+  --cols: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 700px) {
+  :root {
+    --frame-block: max(env(safe-area-inset-top), var(--xxl));
+    --frame-inline: max(env(safe-area-inset-right), var(--lg));
+
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --cols: repeat(2, minmax(0, 1fr));
+  }
+}
+
+:root {
+  --hue: 200;
+  --canvas: hsl(var(--hue) 2% 97%);
+  --on-canvas: hsl(var(--hue) 10% 10%);
+  --on-canvas--dim: hsl(var(--hue) 20% 35%);
+  --on-canvas--mute: hsl(var(--hue) 10% 90%);
+
+  --border: 1px solid var(--on-canvas--mute);
+  --shadow:
+    0px 0.2px 0.9px hsl(var(--hue) 1% 1% / 0.003),
+    0px 0.5px 2px hsl(var(--hue) 1% 1% / 0.004),
+    0px 0.7px 3.5px hsl(var(--hue) 1% 1% / 0.006),
+    0px 1.1px 5.3px hsl(var(--hue) 1% 1% / 0.007),
+    0px 1.5px 7.8px hsl(var(--hue) 1% 1% / 0.008),
+    0px 2.1px 11.4px hsl(var(--hue) 1% 1% / 0.009),
+    0px 2.8px 16.8px hsl(var(--hue) 1% 1% / 0.011),
+    0px 4px 25.6px hsl(var(--hue) 1% 1% / 0.014),
+    0px 5.8px 41.3px hsl(var(--hue) 1% 1% / 0.018),
+    0px 8px 73px hsl(var(--hue) 1% 1% / 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --canvas: hsl(var(--hue) 2% 7%);
+    --on-canvas: hsl(var(--hue) 4% 88%);
+    --on-canvas--dim: hsl(var(--hue) 6% 66%);
+    --on-canvas--mute: hsl(var(--hue) 2% 15%);
+  }
+}
+
+:not(img):not(picture):not(video)::selection {
+  color: var(--canvas);
+  background-color: var(--on-canvas);
+}
+
+:root {
+  --text-stack: system-ui, sans-serif;
+  --text-settings: 'kern' 1, 'liga' 1, 'case' 1, 'dlig' 1, 'ss03' 1;
+  --text-measure: 70ch;
+  --text-size: max(1em, 1.1vw);
+  --text-height: 1.7;
+  --text-spacing: -0.011em;
+  --text-serif-stack: Newsreader, var(--text-stack);
+  --text-serif-size: 110%;
+  --text-serif-height: 1.545;
+  --text-serif-spacing: normal;
+
+  --bold: 500;
 }
