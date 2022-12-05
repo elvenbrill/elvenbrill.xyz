@@ -1,0 +1,24 @@
+{%- extends 'layouts/base.njk' %}
+{%- block head %}
+{%- endblock %}
+
+{%- block content %}
+<h1>{{ title }}</h1>
+
+<section>
+<ul role="list">
+  <li>{{ authors }}</li>
+  <li>ISBN: {{ isbn }}</li>
+  <li>страници: {{ pages }}</li>
+  <li>{{ rating }}</li>
+  <li>прочетена на {{ read | datetime("dd.LL.yyyy") }}</li>
+<ul>
+</section>
+
+<section>
+  {{ content | safe }}
+</section>
+{%- endblock %}
+
+{%- block foot %}
+{%- endblock %}

@@ -1,0 +1,25 @@
+---
+layout: "layouts/page.njk"
+title: "Лавица"
+date: "Last Modified"
+permalink: "/bookshelf/"
+tags: ["page"]
+robots: "true"
+eleventyComputed:
+  pageTitle: "Лавица · {{ site.title }}"
+  pageDescription: "Хронологичен списък на прочетени книги"
+---
+
+{%- set postlist = collections.books %}
+{%- for year, posts in postlist | reverse | groupByYear %}
+<h2>{{ year }}</h2>
+<ol role="list">
+  {%- for post in posts %}
+  <li>
+    <a href="{{ post.url | url }}">
+      {{ post.data.title }}
+    </a>
+  </li>
+  {%- endfor %}
+</ol>
+{%- endfor %}

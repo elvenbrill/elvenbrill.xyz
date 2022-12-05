@@ -4,8 +4,45 @@
 
 {%- block content %}
 <h1>{{ title }}</h1>
+
 <section>
   {{ content | safe }}
+</section>
+
+<section>
+  <h2>Записки</h2>
+  <ul role="list">
+  {%- for item in collections.articles | limit(5) %}
+    <li>
+      <code>{{ item.date | datetime("dd.LL.yyyy") }}</code> · <a rel="bookmark" href="{{ item.url }}">{{ item.data.title }}</a>
+    </li>
+  {%- endfor %}
+  </ul>
+  <p>Към всички <a href="/articles/">записки</a> &raquo;</p>
+</section>
+
+<section>
+  <h2>Бележки</h2>
+  <ul role="list">
+  {%- for item in collections.notes | limit(5) %}
+    <li>
+      Бележка от <a rel="bookmark" href="{{ item.url }}"><code>{{ item.date | datetime("dd.LL.yyyy") }}</code></a>
+    </li>
+  {%- endfor %}
+  </ul>
+  <p>Към всички <a href="/notes/">бележки</a> &raquo;</p>
+</section>
+
+<section>
+  <h2>Наскоро прочетени</h2>
+  <ul role="list">
+  {%- for item in collections.books | limit(5) %}
+    <li>
+      <code>{{ item.data.read | datetime("dd.LL.yyyy") }}</code> · <a rel="bookmark" href="{{ item.url }}">{{ item.data.title }}</a>
+    </li>
+  {%- endfor %}
+  </ul>
+  <p>Към всички <a href="/bookshelf/">книги</a> &raquo;</p>
 </section>
 {%- endblock %}
 

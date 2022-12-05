@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
 
   // Collections
   eleventyConfig.addCollection("articles", require("./lib/collections/articles.js"));
+  eleventyConfig.addCollection("books", require("./lib/collections/books.js"));
   eleventyConfig.addCollection("notes", require("./lib/collections/notes.js"));
   eleventyConfig.addCollection("sitemap", require("./lib/collections/sitemap.js"));
 
