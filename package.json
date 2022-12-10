@@ -24,10 +24,11 @@
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-sub": "^1.0.0",
-    "markdown-it-sup": "^1.0.0"
+    "markdown-it-sup": "^1.0.0",
+    "sanitize-html": "^2.7.3"
   },
   "devDependencies": {
-    "prettier": "^2.8.0"
+    "prettier": "^2.8.1"
   },
   "prettier": {
     "printWidth": 120,
