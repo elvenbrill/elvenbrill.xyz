@@ -1,0 +1,48 @@
+.books ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2.618em 0 0;
+  padding: 0;
+}
+
+.books ul li {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d8d8d8;
+  margin: 0 1.25em 1.25em 0;
+  max-width: 18.75em;
+  background: white;
+}
+
+/**
+ * in order to trick MS Edge into using Flexbox
+ * I'm looking for support of grid-gap and not
+ * for display: grid
+ */
+@supports (grid-gap: 1.25em) {
+  .books ul {
+    display: grid;
+    grid-gap: 1.25em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .books ul li {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+figcaption {
+  display: block;
+  margin: 0 0.618em;
+  padding: 0.618em 0;
+}

@@ -21,7 +21,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("markdown", require("./lib/filters/markdown.js"));
 
   // Shortcodes
-  eleventyConfig.addShortcode("image", require("./lib/shortcodes/image.js"));
+  eleventyConfig.addNunjucksAsyncShortcode("bookcover", require("./lib/shortcodes/bookcover.js"));
+  eleventyConfig.addNunjucksAsyncShortcode("image", require("./lib/shortcodes/image.js"));
 
   // Plugins
   eleventyConfig.addPlugin(EleventyRenderPlugin);

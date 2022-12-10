@@ -59,7 +59,7 @@
 
 :root {
   --text-stack: system-ui, sans-serif;
-  --text-settings: "kern" 1, "liga" 1, "case" 1, "dlig" 1, "ss03" 1;
+  --text-settings: "kern" 1, "liga" 1, "case" 1, "dlig" 1;
   --text-measure: 70ch;
   --text-size: max(1em, 1.1vw);
   --text-height: 1.7;

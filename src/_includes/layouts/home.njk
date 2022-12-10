@@ -33,17 +33,21 @@
   <p>Към всички <a href="/notes/">бележки</a> &raquo;</p>
 </section>
 
-<section>
+<section class="books">
   <h2>Наскоро прочетени</h2>
   <ul role="list">
-  {%- for item in collections.books | limit(5) %}
+  {%- for item in collections.books | limit(4) %}
     <li>
-      <code>{{ item.data.read | datetime("dd.LL.yyyy") }}</code> · <a rel="bookmark" href="{{ item.url }}">{{ item.data.title }}</a>
+      <a rel="bookmark" href="{{ item.url }}">
+      {%- set coverUri %}./src/assets/img/covers/{{ item.data.cover }}{%- endset %}
+      {%- bookcover coverUri, "", "(min-width: 50em) 160px, 30vh" %}
+      </a>
     </li>
   {%- endfor %}
   </ul>
   <p>Към всички <a href="/bookshelf/">книги</a> &raquo;</p>
 </section>
+
 {%- endblock %}
 
 {%- block foot %}

@@ -22,6 +22,28 @@
 
 /* „ “ „ “ */
 :root:lang(bg),
-:not(:lang(bg)) > :lang(bg) {
-  quotes: "\201e""\201c""\201e""\201c";
+:not(:lang(bg))> :lang(bg) {
+  quotes: "\201e" "\201c" "\201e" "\201c";
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Sofia Sans";
+  font-weight: normal;
+  src: url("/assets/fonts/SofiaSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Sofia Sans";
+  font-style: italic;
+  font-weight: normal;
+  src: url("/assets/fonts/SofiaSans-Italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Sofia Sans";
+  font-weight: bold;
+  src: url("/assets/fonts/SofiaSans-Bold.woff2") format("woff2");
 }

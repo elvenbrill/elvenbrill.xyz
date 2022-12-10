@@ -13,7 +13,7 @@ body {
   margin: auto;
   padding-block: var(--frame-block);
   padding-inline: var(--frame-inline);
-  font-family: "Libra Sans", var(--text-stack);
+  font-family: "Sofia Sans", var(--text-stack);
   font-size: var(--text-size);
   font-feature-settings: var(--text-settings);
   font-variant-ligatures: contextual common-ligatures;
@@ -24,7 +24,7 @@ body {
   background-color: var(--canvas);
 }
 
-body > main,
+body>main,
 article {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -37,7 +37,7 @@ article {
   gap: var(--gap);
 }
 
-body > footer {
+body>footer {
   grid-column: 1 / -1;
 
   display: grid;
@@ -48,15 +48,15 @@ body > footer {
   padding-block-start: var(--gutter);
 }
 
-body > footer a {
+body>footer a {
   text-decoration: none;
 }
 
-body > footer :last-child {
+body>footer :last-child {
   grid-column: 1 / -1;
 }
 
-header h1 + p {
+header h1+p {
   color: var(--on-canvas--dim);
 }
 
@@ -72,7 +72,7 @@ h6 {
   display: none;
 }
 
-* + h2 {
+*+h2 {
   margin-block-start: var(--gap);
 }
 
@@ -97,7 +97,7 @@ a:hover {
   text-decoration-color: unset;
 }
 
-:is(h1, h2, h3) > a {
+:is(h1, h2, h3)>a {
   color: unset;
   text-decoration: none;
 }
@@ -136,8 +136,8 @@ hr {
   inline-size: 100%;
 }
 
-* + hr,
-hr + * {
+*+hr,
+hr+* {
   margin-block-start: var(--gap);
 }
 
@@ -156,5 +156,39 @@ hr + * {
     text-decoration: underline dotted;
     text-decoration-color: var(--on-canvas--mute);
     cursor: help;
+  }
+}
+
+/**
+ * TEST
+ */
+.books ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.books ul li {
+  display: flex;
+  flex-direction: column;
+  max-width: 18.75em;
+}
+
+/**
+ * in order to trick MS Edge into using Flexbox
+ * I'm looking for support of grid-gap and not
+ * for display: grid
+ */
+@supports (grid-gap: 1.25em) {
+  .books ul {
+    display: grid;
+    grid-gap: 1.25em;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .books ul li {
+    margin: 0;
+    max-width: 100%;
   }
 }
