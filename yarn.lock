@@ -62,8 +62,9 @@
     normalize-path "^3.0.0"
 
 "@11ty/eleventy@github:11ty/eleventy":
-  version "2.0.0-canary.18"
-  resolved "https://codeload.github.com/11ty/eleventy/tar.gz/19620100ecfa3d7fdeaa5f08e2c55d5146bf9e6d"
+  version "2.0.0-canary.23"
+  uid "18e01a35597c48bbdd85002a2f41b07e3cbc97ff"
+  resolved "https://codeload.github.com/11ty/eleventy/tar.gz/18e01a35597c48bbdd85002a2f41b07e3cbc97ff"
   dependencies:
     "@11ty/dependency-tree" "^2.0.1"
     "@11ty/eleventy-dev-server" "^1.0.0-canary.14"
@@ -84,10 +85,13 @@
     is-glob "^4.0.3"
     iso-639-1 "^2.1.15"
     kleur "^4.1.5"
-    liquidjs "9.41.0"
-    lodash "^4.17.21"
-    luxon "^3.1.0"
+    liquidjs "^10.3.3"
+    lodash.chunk "^4.2.0"
+    lodash.get "^4.4.2"
+    lodash.set "^4.3.2"
+    luxon "^3.1.1"
     markdown-it "^13.0.1"
+    micromatch "^4.0.5"
     minimist "^1.2.7"
     moo "^0.5.2"
     multimatch "^5.0.0"
@@ -1142,25 +1146,35 @@ linkify-it@^4.0.1:
   dependencies:
     uc.micro "^1.0.1"
 
-liquidjs@9.41.0:
-  version "9.41.0"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.41.0.tgz#b6cf6bc3ee3457d14ff5e3cbf134d15f523c6989"
-  integrity sha512-Q1EfRoVYSFmbaTzEHoz39/dMNjPec8uJGHvQiHyzeMp14M9E40a6pOpmDHW009a6qHcjisZyOH96O6No2+1bBQ==
+liquidjs@^10.3.3:
+  version "10.3.3"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-10.3.3.tgz#4105d764130e6eedc9bb14d98dd8313330336648"
+  integrity sha512-o6s4rOn81x0FlF9SJEQEx3f/j3iL0Iq3zqOsbFEcsoi7Ivn6jEXBEi2Xl5k0oYc7KqYS54uGOa9XC4Ahk7zdFA==
 
 list-to-array@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/list-to-array/-/list-to-array-1.1.0.tgz#ca7dff640606433cac75cbe8446acd864b15bf6f"
   integrity sha512-+dAZZ2mM+/m+vY9ezfoueVvrgnHIGi5FvgSymbIgJOFwiznWyA59mav95L+Mc6xPtL3s9gm5eNTlNtxJLbNM1g==
 
+lodash.chunk@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.chunk/-/lodash.chunk-4.2.0.tgz#66e5ce1f76ed27b4303d8c6512e8d1216e8106bc"
+  integrity sha512-ZzydJKfUHJwHa+hF5X66zLFCBrWn5GeF28OHEr4WVWtNDXlQ/IjWKPBiikqKo2ne0+v6JgCgJ0GzJp8k8bHC7w==
+
 lodash.deburr@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/lodash.deburr/-/lodash.deburr-4.1.0.tgz#ddb1bbb3ef07458c0177ba07de14422cb033ff9b"
   integrity sha512-m/M1U1f3ddMCs6Hq2tAsYThTBDaAKFDX3dwDo97GEYzamXi9SqUpjWi/Rrj/gf3X2n8ktwgZrlP1z6E3v/IExQ==
 
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
+
+lodash.set@^4.3.2:
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/lodash.set/-/lodash.set-4.3.2.tgz#d8757b1da807dde24816b0d6a84bea1a76230b23"
+  integrity sha512-4hNPN5jlm/N/HLMCO43v8BXKq9Z7QdAGc/VGrRD61w8gN9g/6jF9A4L1pbUgBLCffi0w9VsXfTOij5x8iTyFvg==
 
 lower-case@^1.1.1:
   version "1.1.4"
@@ -1174,10 +1188,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-luxon@^3.1.0:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.1.1.tgz#b492c645b2474fb86f3bd3283213846b99c32c1e"
-  integrity sha512-Ah6DloGmvseB/pX1cAmjbFvyU/pKuwQMQqz7d0yvuDlVYLTs2WeDHQMpC8tGjm1da+BriHROW/OEIT/KfYg6xw==
+luxon@^3.1.1:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/luxon/-/luxon-3.2.0.tgz#7962c5dafcd3623e70e222882be49b381e7a8718"
+  integrity sha512-Namj3XqoJjFekq/JHQEaaAv4zyE/fyyDBrMEBnIL2s/X54SC8W5Ea0uej1TRXUArWec8OojsAVsGBYhNRjpMVw==
 
 markdown-it-abbr@^1.0.4:
   version "1.0.4"
@@ -1240,7 +1254,7 @@ merge2@^1.3.0:
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-micromatch@^4.0.4:
+micromatch@^4.0.4, micromatch@^4.0.5:
   version "4.0.5"
   resolved "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.5.tgz#bc8999a7cbbf77cdc89f132f6e467051b49090c6"
   integrity sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==
